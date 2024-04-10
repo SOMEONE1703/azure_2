@@ -32,7 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
     loadCarsBtn.addEventListener('click', () => {
         (async function() {
             const { data } = await( await fetch(`/api/message`)).json();
-            cars = data.text;
+            console.log(data);
+            cars = data;
                 carList.innerHTML = '';
                 data.forEach((car, index) => {
                     const carCard = document.createElement('div');
