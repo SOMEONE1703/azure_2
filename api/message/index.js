@@ -44,7 +44,7 @@ module.exports = async function (context, req) {
         });
     }
     else if(req.body.key==="delete"){
-        const index = cars.findIndex(car => car.id === id);
+        const index = cars.findIndex(car => car.id === req.body.one);
         cars.splice(index, 1);
         context.res.json( {
             // status: 200, /* Defaults to 200 */
