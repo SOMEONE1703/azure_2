@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //     });
         //##########################
         fetch('/api/message', {
-            method: 'GET',
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
