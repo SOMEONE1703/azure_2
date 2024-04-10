@@ -7,11 +7,10 @@
   <link rel="stylesheet" href="styles.css">
   <title>Vanilla JavaScript App</title>
   <script>
-    function something(){
-      (async function() {
+    async function something(){
         const { text } = await( await fetch(`/api/message`)).json();
         document.querySelector('#name').textContent = text;
-    }());
+    
     }
     
   </script>
