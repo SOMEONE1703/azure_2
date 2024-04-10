@@ -15,10 +15,21 @@ module.exports = async function (context, req) {
 }
 module.exports.doSomething = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
+    if (req.method=="POST"){
+        cars.push(context.body);
+        context.res.json( {
+            // status: 200, /* Defaults to 200 */
+            body: "responseMessage",
+            text:cars
+        });
+    }
+    else{
+        context.res.json( {
+            // status: 200, /* Defaults to 200 */
+            // body: responseMessage
+            text:"Goodbye from Something else"
+        });
+    }
 
-    context.res.json( {
-        // status: 200, /* Defaults to 200 */
-        // body: responseMessage
-        text:"Goodbye from Something else"
-    });
+    
 }
