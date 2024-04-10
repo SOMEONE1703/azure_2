@@ -1,5 +1,17 @@
 const cars=require('./cars.json');
-let next_ind=3;
+let next_ind=0;
+for (let i=0;i<cars.length;i++){
+    let c={
+        make:cars[i].make,
+        model:cars[i].model,
+        year:cars[i].year,
+        price:cars[i].price,
+        id:i
+    };
+    next_ind++;
+    cars[i]=c;
+}
+
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
@@ -16,13 +28,28 @@ module.exports = async function (context, req) {
         });
     }
     else if(req.body.key==="add"){
-        cars.push(req.body.one);
+        let carw=req.body.one;
+        let c={
+            make:carw.make,
+            model:carw.model,
+            year:carw.year,
+            price:carw.price,
+            id:next_ind
+        };
+        next_ind++;
+        cars.push(c);
         context.res.json( {
             // status: 200, /* Defaults to 200 */
             body: "all good",
         });
     }
-    else if(req.boy.key==="adjust"){
-
+    else if(req.body.key==="delete"){
+        const index = cars.findIndex(car => car.id === id);
+        cars.splice(index, 1);
+        context.res.json( {
+            // status: 200, /* Defaults to 200 */
+            text: cars,
+            what: "responseMessage"
+        });
     }
 }

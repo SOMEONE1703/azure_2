@@ -74,8 +74,12 @@ carForm.addEventListener('submit', event => {
 // Function to remove a car
 function removeCar(index) {
     const carId = cars[index].id;
-    fetch(`api/message/${carId}`, {
-        method: 'DELETE'
+    fetch('/api/message', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({one:carId,key:"delete"})
     })
         .then(response => response.json())
         .then(data => {
@@ -87,6 +91,20 @@ function removeCar(index) {
         .catch(error => {
             console.error('Error:', error);
         });
+    //##############################
+    // fetch(`api/message/`, {
+    //     method: 'DELETE'
+    // })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         console.log('Success:', data);
+    //         //reload cars
+    //         // const loadCarsBtn = document.getElementById('loadCarsBtn');
+    //         loadCarsBtn.click();
+    //     })
+    //     .catch(error => {
+    //         console.error('Error:', error);
+    //     });
 }
 // Event delegation for remove buttons
 carList.addEventListener('click', event => {
