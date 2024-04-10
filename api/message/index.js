@@ -15,7 +15,7 @@ module.exports = async function (context, req) {
             text:cars
         });
     }
-    else if(req.body.key==="post"){
+    else if(req.body.key==="add"){
         cars.push(req.body.one);
         context.res.json( {
             // status: 200, /* Defaults to 200 */
