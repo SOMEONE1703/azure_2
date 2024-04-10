@@ -1,4 +1,4 @@
-const cars=[{some:"some2",some3:"some4"}];
+const cars=require('./cars.json');
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 

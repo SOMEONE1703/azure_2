@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(data);
                 cars = data.text;
                 carList.innerHTML = '';
-                data.forEach((car, index) => {
+                data.text.forEach((car, index) => {
                     const carCard = document.createElement('div');
                     carCard.classList.add('car-card');
                     carCard.innerHTML = `
