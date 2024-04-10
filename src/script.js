@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
 });
 function addCar(newCar) {
-    fetch('/api/message/doSomething', {
+    fetch('/api/doSomething', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
