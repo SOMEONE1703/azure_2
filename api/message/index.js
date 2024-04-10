@@ -9,7 +9,7 @@ module.exports = async function (context, req) {
 
     context.res.json( {
         // status: 200, /* Defaults to 200 */
-        // body: responseMessage
+        body: "responseMessage",
         text:cars
     });
 }
