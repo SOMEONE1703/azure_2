@@ -1,3 +1,4 @@
+const cars=[{some:"some2",some3:"some4"}];
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
@@ -10,5 +11,14 @@ module.exports = async function (context, req) {
         // status: 200, /* Defaults to 200 */
         // body: responseMessage
         text:"Hello from Someone else"
+    });
+}
+module.exports.doSomething = async function (context, req) {
+    context.log('JavaScript HTTP trigger function processed a request.');
+
+    context.res.json( {
+        // status: 200, /* Defaults to 200 */
+        // body: responseMessage
+        text:"Goodbye from Something else"
     });
 }
